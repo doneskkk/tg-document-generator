@@ -65,8 +65,8 @@ const Form = () => {
                     onChange={onChangeAddress}
                 />
                 <select value={typeObject} onChange={onChangeType} className={'select'}>
-                    <option value={'video'}>Видеонаблюдение</option>
-                    <option value={'fire'}>Пожар</option>
+                    <option value={'Видеонаблюдение'}>Видеонаблюдение</option>
+                    <option value={'Пожар'}>Пожар</option>
                 </select>
             </div>
         </div>
