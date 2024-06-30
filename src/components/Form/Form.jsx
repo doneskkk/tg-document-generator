@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import './Form.css'
 import {useTelegram} from "../../hooks/useTelegram";
 
@@ -8,6 +8,21 @@ const Form = () => {
     const [typeObject, setTypeObject] = useState('video')
     const {tg} = useTelegram();
 
+    const onSendData = useCallback( () => {
+        const data = {
+            objectName,
+            address,
+            typeObject,
+        }
+        tg.sendData(JSON.stringify(data))
+    }, [objectName, address, typeObject])
+
+    useEffect(() => {
+        tg.onEvent('mainButtonClicked', onSendData)
+        return () => {
+            tg.offEvent('mainButtonClicked', onSendData())
+        }
+    },[])
     useEffect(() => {
         tg.MainButton.setParams({
             text: 'Сгенерировать документ'
