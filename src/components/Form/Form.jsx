@@ -1,0 +1,61 @@
+import React, {useEffect, useState} from 'react';
+import './Form.css'
+import {useTelegram} from "../../hooks/useTelegram";
+
+const Form = () => {
+    const [objectName, setObjectName] = useState('')
+    const [address, setAddress] = useState('')
+    const [typeObject, setTypeObject] = useState('video')
+    const {tg} = useTelegram();
+
+    useEffect(() => {
+        tg.MainButton.setParams({
+            text: 'Сгенерировать документ'
+        })
+    }, [])
+
+    useEffect( () => {
+        if(!objectName || !address) {
+            tg.MainButton.hide();
+        } else {
+            tg.MainButton.show();
+        }
+    },[objectName, address])
+    const onChangeObjectName = (e) => {
+        setObjectName(e.target.value)
+    }
+    const onChangeAddress = (e) => {
+        setAddress(e.target.value)
+    }
+
+    const onChangeType = (e) => {
+        setTypeObject(e.target.value)
+    }
+    return (
+        <div>
+            <div className={"form"}>
+                <h3>Введите ваши данные</h3>
+                <input
+                    className={'input'}
+                    type="text"
+                    placeholder={'Название проекта'}
+                    value={objectName}
+                    onChange={onChangeObjectName}
+                />
+                <input
+                    className={'input'}
+                    type="text"
+                    placeholder={'Адрес'}
+                    value={address}
+                    onChange={onChangeAddress}
+                />
+                <select value={typeObject} onChange={onChangeType} className={'select'}>
+                    <option value={'video'}>Видеонаблюдение</option>
+                    <option value={'fire'}>Пожар</option>
+                </select>
+            </div>
+        </div>
+    );
+};
+
+export default Form;
