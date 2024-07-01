@@ -78,52 +78,52 @@ const Form = () => {
     };
 
     return (
-        <div>
+        <div className={"form-container"}>
             <div className={"form"}>
                 <h3>Введите ваши данные</h3>
-                <input className={'input'} type="text" placeholder={'Название объекта'} value={objectName} onChange={(e) => setObjectName(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Юридическое имя'} value={personJurName} onChange={(e) => setPersonJurName(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Имя предпринимателя'} value={antreprenorName} onChange={(e) => setAntreprenorName(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Имя субподрядчика (необязательно)'} value={subantreprenorName} onChange={(e) => setSubantreprenorName(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Количество этажей'} value={floorCount} onChange={(e) => setFloorCount(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Общая площадь'} value={totalArea} onChange={(e) => setTotalArea(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Адрес объекта'} value={objectAddress} onChange={(e) => setObjectAddress(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Название компании проектировщика'} value={companyProject} onChange={(e) => setCompanyProject(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Clad inalt'} value={cladInalt} onChange={(e) => setCladInalt(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Tavan inalt'} value={tavanInalt} onChange={(e) => setTavanInalt(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Номер проекта'} value={projectId} onChange={(e) => setProjectId(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Denumirea objectului'} value={objectName} onChange={(e) => setObjectName(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Denumirea persoanei juridice'} value={personJurName} onChange={(e) => setPersonJurName(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Denumirea antreprenorului'} value={antreprenorName} onChange={(e) => setAntreprenorName(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Denumirea subantreprenorului (optional)'} value={subantreprenorName} onChange={(e) => setSubantreprenorName(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Etaje'} value={floorCount} onChange={(e) => setFloorCount(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Suprafata'} value={totalArea} onChange={(e) => setTotalArea(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Adresa objectului'} value={objectAddress} onChange={(e) => setObjectAddress(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Compania de proiectare'} value={companyProject} onChange={(e) => setCompanyProject(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Inaltimea cladirii'} value={cladInalt} onChange={(e) => setCladInalt(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Inaltimea tavantului'} value={tavanInalt} onChange={(e) => setTavanInalt(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Nr. Proiectului'} value={projectId} onChange={(e) => setProjectId(e.target.value)} />
 
                 <div className={'checkbox-group'}>
                     <label>
-                        <input type="checkbox" value="Система пожарной сигнализации" checked={systemType.includes("Система пожарной сигнализации")} onChange={handleSystemTypeChange} />
+                        <input type="checkbox" value="SEMNALIZAREA DE INCENDIU"  checked={systemType.includes("SEMNALIZAREA DE INCENDIU")} onChange={handleSystemTypeChange} />
                         Система пожарной сигнализации
                     </label>
                     <label>
-                        <input type="checkbox" value="Система сигнализации" checked={systemType.includes("Система сигнализации")} onChange={handleSystemTypeChange} />
+                        <input type="checkbox" value="SISTEM AVERTIZARE" checked={systemType.includes("SISTEM AVERTIZARE")} onChange={handleSystemTypeChange} />
                         Система сигнализации
                     </label>
                     <label>
-                        <input type="checkbox" value="Система пожаротушения" checked={systemType.includes("Система пожаротушения")} onChange={handleSystemTypeChange} />
+                        <input type="checkbox" value="SISTEM STINGERE" checked={systemType.includes("SISTEM STINGERE")} onChange={handleSystemTypeChange} />
                         Система пожаротушения
                     </label>
                 </div>
 
-                <label> Дата словесного экзамена
+                <label className={'date-label'}> Дата словесного экзамена
                     <input className={'input'} type="date" value={procelVerbalDataExam} onChange={(e) => setProcelVerbalDataExam(e.target.value)} />
                 </label>
-                <label>Дата окончания объекта:
+                <label className={'date-label'}>Дата окончания объекта
                     <input className={'input'} type="date" value={dataFinishObject} onChange={(e) => setDataFinishObject(e.target.value)} />
                 </label>
-                <label>Дата начала кабельных работ:
+                <label className={'date-label'}>Дата начала кабельных работ:
                     <input className={'input'} type="date" value={dataStartLucruCabl} onChange={(e) => setDataStartLucruCabl(e.target.value)} />
                 </label>
-                <label>Дата окончания кабельных работ:
+                <label className={'date-label'}>Дата окончания кабельных работ:
                     <input className={'input'} type="date" value={dataFinishLucruCabl} onChange={(e) => setDataFinishLucruCabl(e.target.value)} />
                 </label>
-                <label>Дата начала монтажных работ:
+                <label className={'date-label'}>Дата начала монтажных работ:
                     <input className={'input'} type="date" value={dataStartLucruMont} onChange={(e) => setDataStartLucruMont(e.target.value)} />
                 </label>
-                <label>Дата окончания монтажных работ:
+                <label className={'date-label'}>Дата окончания монтажных работ:
                     <input className={'input'} type="date" value={dataFinishLucruMont} onChange={(e) => setDataFinishLucruMont(e.target.value)} />
                 </label>
             </div>
