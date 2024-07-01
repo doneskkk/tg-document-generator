@@ -111,9 +111,6 @@ const Form = () => {
                 <label className={'date-label'}> Дата словесного экзамена
                     <input className={'input'} type="date" value={procelVerbalDataExam} onChange={(e) => setProcelVerbalDataExam(e.target.value)} />
                 </label>
-                <label className={'date-label'}>Дата окончания объекта
-                    <input className={'input'} type="date" value={dataFinishObject} onChange={(e) => setDataFinishObject(e.target.value)} />
-                </label>
                 <label className={'date-label'}>Дата начала кабельных работ:
                     <input className={'input'} type="date" value={dataStartLucruCabl} onChange={(e) => setDataStartLucruCabl(e.target.value)} />
                 </label>
@@ -125,6 +122,9 @@ const Form = () => {
                 </label>
                 <label className={'date-label'}>Дата окончания монтажных работ:
                     <input className={'input'} type="date" value={dataFinishLucruMont} onChange={(e) => setDataFinishLucruMont(e.target.value)} />
+                </label>
+                <label className={'date-label'}>Дата сдачи в эксплуатацию
+                    <input className={'input'} type="date" value={dataFinishObject} onChange={(e) => setDataFinishObject(e.target.value)} />
                 </label>
             </div>
         </div>
