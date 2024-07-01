@@ -1,3 +1,6 @@
+/* Form.css */
+
+/* Header styles */
 h3 {
     color: #333;
     margin-bottom: 20px;
@@ -5,9 +8,14 @@ h3 {
     text-align: center;
 }
 
+/* Container for the form */
 .form-container {
     padding: 20px;
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    /* Adjust gradient colors and direction as needed */
 }
+
+/* Input field styles */
 .input {
     width: 100%;
     padding: 12px;
@@ -23,6 +31,7 @@ h3 {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
+/* Checkbox group styles */
 .checkbox-group {
     display: flex;
     flex-direction: column;
@@ -34,6 +43,7 @@ h3 {
     font-family: 'Arial', sans-serif;
 }
 
+/* Date label styles */
 .date-label {
     margin: 15px 0;
     font-family: 'Arial', sans-serif;
