@@ -100,7 +100,7 @@ const Form = () => {
                     </label>
                     <label>
                         <input type="checkbox" value="SISTEM AVERTIZARE" checked={systemType.includes("SISTEM AVERTIZARE")} onChange={handleSystemTypeChange} />
-                        SEMNALIZAREA DE INCENDIU
+                        SISTEM AVERTIZARE
                     </label>
                     <label>
                         <input type="checkbox" value="SISTEM STINGERE" checked={systemType.includes("SISTEM STINGERE")} onChange={handleSystemTypeChange} />
