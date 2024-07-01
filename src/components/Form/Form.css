@@ -11,7 +11,7 @@ h3 {
 /* Container for the form */
 .form-container {
     padding: 20px;
-    background: var(--tg-theme-bg-color) /* Light background with transparency */
+    background: var(--tg-theme-bg-color);/* Light background with transparency */
     border-radius: 10px; /* Rounded corners for a softer look */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
     margin-bottom: 20px; /* Space below the form */
