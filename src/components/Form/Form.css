@@ -11,10 +11,10 @@ h3 {
 /* Container for the form */
 .form-container {
     padding: 20px;
-    background: var(--tg-theme-bg-color);/* Light background with transparency */
-    border-radius: 10px; /* Rounded corners for a softer look */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    margin-bottom: 20px; /* Space below the form */
+    background: var(--tg-theme-bg-color);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
     color: var(--tg-theme-text-color);
 }
 
@@ -88,9 +88,6 @@ h3 {
     color: var(--telegram-text);
 }
 
-.date-label input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none; /* Hide the default arrow icon */
-}
 
 .date-label input[type="date"]:focus {
     border-color: #007bff; /* Focus border color */
