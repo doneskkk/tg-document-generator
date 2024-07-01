@@ -114,15 +114,15 @@ const Form = () => {
 
                 <div className={'checkbox-group'}>
                     <label>
-                        <input type="checkbox" value="SEMNALIZAREA DE INCENDIU"  checked={systemType.includes("SEMNALIZAREA DE INCENDIU, ")} onChange={handleSystemTypeChange} />
+                        <input type="checkbox" value="SEMNALIZAREA DE INCENDIU"  checked={systemType.includes("SEMNALIZAREA DE INCENDIU")} onChange={handleSystemTypeChange} />
                         🔥SEMNALIZAREA DE INCENDIU
                     </label>
                     <label>
-                        <input type="checkbox" value="SISTEM AVERTIZARE" checked={systemType.includes("SISTEM AVERTIZARE, ")} onChange={handleSystemTypeChange} />
+                        <input type="checkbox" value="SISTEM AVERTIZARE" checked={systemType.includes("SISTEM AVERTIZARE")} onChange={handleSystemTypeChange} />
                         📢SISTEM AVERTIZARE
                     </label>
                     <label>
-                        <input type="checkbox" value="SISTEM STINGERE" checked={systemType.includes("SISTEM STINGERE, ")} onChange={handleSystemTypeChange} />
+                        <input type="checkbox" value="SISTEM STINGERE" checked={systemType.includes("SISTEM STINGERE")} onChange={handleSystemTypeChange} />
                         🚒SISTEM STINGERE
                     </label>
                 </div>
