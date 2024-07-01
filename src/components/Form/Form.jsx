@@ -73,12 +73,12 @@ const Form = () => {
     }, []);
 
     useEffect(() => {
-        if (!documentId || !reprezentName || !dirigName || !tehnicName || !benName || !objectName || !personJurName || !antreprenorName || !floorCount || !totalArea || !objectAddress || systemType.length === 0 || !projectId || !companyProject || !dataFinishObject || !dataStartLucruCabl || !dataFinishLucruCabl || !dataStartLucruMont || !dataFinishLucruMont) {
+        if (!documentId  || !objectName || !personJurName || !antreprenorName || !floorCount || !totalArea || !objectAddress || systemType.length === 0 || !projectId || !companyProject || !dataFinishObject || !dataStartLucruCabl || !dataFinishLucruCabl || !dataStartLucruMont || !dataFinishLucruMont) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
-    }, [documentId, reprezentName, dirigName, tehnicName, benName, objectName, personJurName, antreprenorName, floorCount, totalArea, objectAddress, systemType, projectId, companyProject, dataFinishObject, dataStartLucruCabl, dataFinishLucruCabl, dataStartLucruMont, dataFinishLucruMont]);
+    }, [documentId, objectName, personJurName, antreprenorName, floorCount, totalArea, objectAddress, systemType, projectId, companyProject, dataFinishObject, dataStartLucruCabl, dataFinishLucruCabl, dataStartLucruMont, dataFinishLucruMont]);
 
     const handleSystemTypeChange = (e) => {
         const { value, checked } = e.target;
@@ -100,6 +100,7 @@ const Form = () => {
                 <input className={'input'} type="text" placeholder={'Reprezentanții Beneficiarului (optional)'} value={benName} onChange={(e) => setBenName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Reprezentanții Antreprenor General (optional)'} value={reprezentName} onChange={(e) => setReprezentName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Manager de Proiect (optional)'} value={managerName} onChange={(e) => setManagerName(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Responsabil Tehnic (optional)'} value={tehnicName} onChange={(e) => setTehnicName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Reprezentanții companiei de instalare, pornire și reglare (optional)'} value={subantreprenorName} onChange={(e) => setSubantreprenorName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Diriginte Șantier lucrări Specializate  (optional)'} value={dirigName} onChange={(e) => setDirigName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Etaje'} value={floorCount} onChange={(e) => setFloorCount(e.target.value)} />
@@ -113,16 +114,16 @@ const Form = () => {
 
                 <div className={'checkbox-group'}>
                     <label>
-                        <input type="checkbox" value="SEMNALIZAREA DE INCENDIU"  checked={systemType.includes("SEMNALIZAREA DE INCENDIU")} onChange={handleSystemTypeChange} />
-                        SEMNALIZAREA DE INCENDIU
+                        <input type="checkbox" value="SEMNALIZAREA DE INCENDIU"  checked={systemType.includes("SEMNALIZAREA DE INCENDIU, ")} onChange={handleSystemTypeChange} />
+                        🔥SEMNALIZAREA DE INCENDIU
                     </label>
                     <label>
-                        <input type="checkbox" value="SISTEM AVERTIZARE" checked={systemType.includes("SISTEM AVERTIZARE")} onChange={handleSystemTypeChange} />
-                        SISTEM AVERTIZARE
+                        <input type="checkbox" value="SISTEM AVERTIZARE" checked={systemType.includes("SISTEM AVERTIZARE, ")} onChange={handleSystemTypeChange} />
+                        📢SISTEM AVERTIZARE
                     </label>
                     <label>
-                        <input type="checkbox" value="SISTEM STINGERE" checked={systemType.includes("SISTEM STINGERE")} onChange={handleSystemTypeChange} />
-                        SISTEM STINGERE
+                        <input type="checkbox" value="SISTEM STINGERE" checked={systemType.includes("SISTEM STINGERE, ")} onChange={handleSystemTypeChange} />
+                        🚒SISTEM STINGERE
                     </label>
                 </div>
 
