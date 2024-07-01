@@ -99,7 +99,7 @@ const Form = () => {
                         SEMNALIZAREA DE INCENDIU
                     </label>
                     <label>
-                        <input type="checkbox" value="SEMNALIZAREA DE INCENDIU" checked={systemType.includes("SISTEM AVERTIZARE")} onChange={handleSystemTypeChange} />
+                        <input type="checkbox" value="SISTEM AVERTIZARE" checked={systemType.includes("SISTEM AVERTIZARE")} onChange={handleSystemTypeChange} />
                         SEMNALIZAREA DE INCENDIU
                     </label>
                     <label>
