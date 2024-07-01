@@ -3,6 +3,7 @@ import './Form.css';
 import { useTelegram } from "../../hooks/useTelegram";
 
 const Form = () => {
+    const [objectName, setObjectName] = useState('')
     const [personJurName, setPersonJurName] = useState('');
     const [antreprenorName, setAntreprenorName] = useState('');
     const [subantreprenorName, setSubantreprenorName] = useState('');
@@ -24,6 +25,7 @@ const Form = () => {
 
     const onSendData = useCallback(() => {
         const data = {
+            objectName,
             personJurName,
             antreprenorName,
             subantreprenorName,
@@ -43,7 +45,7 @@ const Form = () => {
             dataFinishLucruMont,
         };
         tg.sendData(JSON.stringify(data));
-    }, [personJurName, antreprenorName, subantreprenorName, floorCount, totalArea, objectAddress, systemType, procelVerbalDataExam, cladInalt, tavanInalt, projectId, companyProject, dataFinishObject, dataStartLucruCabl, dataFinishLucruCabl, dataStartLucruMont, dataFinishLucruMont, tg]);
+    }, [objectName, personJurName, antreprenorName, subantreprenorName, floorCount, totalArea, objectAddress, systemType, procelVerbalDataExam, cladInalt, tavanInalt, projectId, companyProject, dataFinishObject, dataStartLucruCabl, dataFinishLucruCabl, dataStartLucruMont, dataFinishLucruMont, tg]);
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData);
@@ -59,12 +61,12 @@ const Form = () => {
     }, []);
 
     useEffect(() => {
-        if (!personJurName || !antreprenorName || !floorCount || !totalArea || !objectAddress || systemType.length === 0 || !projectId || !companyProject || !dataFinishObject || !dataStartLucruCabl || !dataFinishLucruCabl || !dataStartLucruMont || !dataFinishLucruMont) {
+        if (!objectName || !personJurName || !antreprenorName || !floorCount || !totalArea || !objectAddress || systemType.length === 0 || !projectId || !companyProject || !dataFinishObject || !dataStartLucruCabl || !dataFinishLucruCabl || !dataStartLucruMont || !dataFinishLucruMont) {
             tg.MainButton.hide();
         } else {
             tg.MainButton.show();
         }
-    }, [personJurName, antreprenorName, floorCount, totalArea, objectAddress, systemType, projectId, companyProject, dataFinishObject, dataStartLucruCabl, dataFinishLucruCabl, dataStartLucruMont, dataFinishLucruMont]);
+    }, [objectName, personJurName, antreprenorName, floorCount, totalArea, objectAddress, systemType, projectId, companyProject, dataFinishObject, dataStartLucruCabl, dataFinishLucruCabl, dataStartLucruMont, dataFinishLucruMont]);
 
     const handleSystemTypeChange = (e) => {
         const { value, checked } = e.target;
@@ -79,12 +81,17 @@ const Form = () => {
         <div>
             <div className={"form"}>
                 <h3>Введите ваши данные</h3>
+                <input className={'input'} type="text" placeholder={'Название объекта'} value={objectName} onChange={(e) => setObjectName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Юридическое имя'} value={personJurName} onChange={(e) => setPersonJurName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Имя предпринимателя'} value={antreprenorName} onChange={(e) => setAntreprenorName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Имя субподрядчика (необязательно)'} value={subantreprenorName} onChange={(e) => setSubantreprenorName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Количество этажей'} value={floorCount} onChange={(e) => setFloorCount(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Общая площадь'} value={totalArea} onChange={(e) => setTotalArea(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Адрес объекта'} value={objectAddress} onChange={(e) => setObjectAddress(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Название компании проектировщика'} value={companyProject} onChange={(e) => setCompanyProject(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Clad inalt'} value={cladInalt} onChange={(e) => setCladInalt(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Tavan inalt'} value={tavanInalt} onChange={(e) => setTavanInalt(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Номер проекта'} value={projectId} onChange={(e) => setProjectId(e.target.value)} />
 
                 <div className={'checkbox-group'}>
                     <label>
