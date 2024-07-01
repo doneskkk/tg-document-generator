@@ -25,7 +25,7 @@ h3 {
     margin: 10px 0;
     border: 1px solid rgba(255, 255, 255, 0.2); /* Transparent border */
     border-radius: 4px;
-    background-color: rgba(103, 132, 231, 0.24); /* Transparent background */
+    background-color: rgba(166, 253, 253, 0.53); /* Transparent background */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
     box-sizing: border-box;
@@ -34,7 +34,7 @@ h3 {
 
 /* Placeholder styles for input fields */
 .input::placeholder {
-    color: rgba(0, 0, 0, 0.14); /* Placeholder text color for default (light) theme */
+    color: rgb(0, 0, 0); /* Placeholder text color for default (light) theme */
     opacity: 1; /* Ensure full opacity for placeholder */
 }
 
@@ -42,7 +42,7 @@ h3 {
 @media (prefers-color-scheme: dark) {
     /* Adjust placeholder color for dark theme */
     .input::placeholder {
-        color: #ccc; /* Placeholder text color for Telegram's night theme */
+        color: #1f1919; /* Placeholder text color for Telegram's night theme */
     }
 }
 
