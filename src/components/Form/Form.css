@@ -15,6 +15,7 @@ h3 {
     border-radius: 10px; /* Rounded corners for a softer look */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
     margin-bottom: 20px; /* Space below the form */
+    color: var(--telegram-text);
 }
 
 /* Individual input field styles */
