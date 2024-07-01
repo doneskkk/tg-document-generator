@@ -68,7 +68,7 @@ const Form = () => {
 
     useEffect(() => {
         tg.MainButton.setParams({
-            text: 'Сгенерировать документ'
+            text: 'Generate'
         });
     }, []);
 
@@ -87,6 +87,14 @@ const Form = () => {
         } else {
             setSystemType((prev) => prev.filter((type) => type !== value));
         }
+    };
+
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        const day = date.getDate().toString().padStart(2, '0');
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const year = date.getFullYear();
+        return `${day}/${month}/${year}`;
     };
 
     return (
@@ -128,22 +136,22 @@ const Form = () => {
                 </div>
 
                 <label className={'date-label'}> Data Examinarii Obiectului
-                    <input className={'input'} type="date" value={procelVerbalDataExam} onChange={(e) => setProcelVerbalDataExam(e.target.value)} />
+                    <input className={'input'} type="text" value={formatDate(procelVerbalDataExam)} onChange={(e) => setProcelVerbalDataExam(e.target.value)} />
                 </label>
                 <label className={'date-label'}>Data Inceperii lucrarilor de Cablare
-                    <input className={'input'} type="date" value={dataStartLucruCabl} onChange={(e) => setDataStartLucruCabl(e.target.value)} />
+                    <input className={'input'} type="text" value={formatDate(dataStartLucruCabl)} onChange={(e) => setDataStartLucruCabl(e.target.value)} />
                 </label>
                 <label className={'date-label'}>Data Finisarii lucrarilor de Cablare
-                    <input className={'input'} type="date" value={dataFinishLucruCabl} onChange={(e) => setDataFinishLucruCabl(e.target.value)} />
+                    <input className={'input'} type="text" value={formatDate(dataFinishLucruCabl)} onChange={(e) => setDataFinishLucruCabl(e.target.value)} />
                 </label>
                 <label className={'date-label'}>Data Inceperii lucrarilor de Montare
-                    <input className={'input'} type="date" value={dataStartLucruMont} onChange={(e) => setDataStartLucruMont(e.target.value)} />
+                    <input className={'input'} type="text" value={formatDate(dataStartLucruMont)} onChange={(e) => setDataStartLucruMont(e.target.value)} />
                 </label>
                 <label className={'date-label'}>Data Finisarii lucrarilor de Montare
-                    <input className={'input'} type="date" value={dataFinishLucruMont} onChange={(e) => setDataFinishLucruMont(e.target.value)} />
+                    <input className={'input'} type="text" value={formatDate(dataFinishLucruMont)} onChange={(e) => setDataFinishLucruMont(e.target.value)} />
                 </label>
                 <label className={'date-label'}>Lucrarilor de reglare si punere in functiune a sistemelor
-                    <input className={'input'} type="date" value={dataFinishObject} onChange={(e) => setDataFinishObject(e.target.value)} />
+                    <input className={'input'} type="text" value={formatDate(dataFinishObject)} onChange={(e) => setDataFinishObject(e.target.value)} />
                 </label>
             </div>
         </div>
