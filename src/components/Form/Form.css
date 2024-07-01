@@ -5,6 +5,9 @@ h3 {
     text-align: center;
 }
 
+.form-container {
+    padding: 20px;
+}
 .input {
     width: 100%;
     padding: 12px;
