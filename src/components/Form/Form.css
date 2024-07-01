@@ -45,6 +45,9 @@ h3 {
         color: #1f1919; /* Placeholder text color for Telegram's night theme */
     }
 
+    .form-container {
+        background-color: black;
+    }
     .input {
         background-color: rgba(166, 253, 253, 0.53); /* Transparent background */
     }
