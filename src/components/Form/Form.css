@@ -49,13 +49,25 @@ h3 {
     font-family: 'Arial', sans-serif;
 }
 
-/* Date label styles */
-.date-label {
-    margin: 15px 0;
-    font-family: 'Arial', sans-serif;
+.date-label input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Light border */
+    border-radius: 4px;
+    background-color: #fff; /* White background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    box-sizing: border-box;
+    -webkit-appearance: none; /* Remove default iOS styling */
 }
 
-.date-label input {
-    display: block;
-    margin-top: 5px;
+.date-label input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none; /* Hide the default arrow icon */
+}
+
+.date-label input[type="date"]:focus {
+    border-color: #007bff; /* Focus border color */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Focus shadow */
 }
