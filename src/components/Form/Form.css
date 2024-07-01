@@ -11,7 +11,8 @@ h3 {
 /* Container for the form */
 .form-container {
     padding: 20px;
-    background: linear-gradient(to right, #2b5876, #4e4376);
+    background: linear-gradient(to right, rgb(255, 255, 255), rgba(255, 255, 255, 0.27));
+    /* Adjust gradient colors and direction as needed */
 }
 
 /* Input field styles */
