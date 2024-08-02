@@ -104,6 +104,7 @@ const Form = () => {
                 <input className={'input'} type="text" placeholder={'Responsabil Tehnic (optional)'} value={tehnicName} onChange={(e) => setTehnicName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Reprezentanții companiei de instalare, pornire și reglare (optional)'} value={subantreprenorName} onChange={(e) => setSubantreprenorName(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Diriginte Șantier lucrări Specializate  (optional)'} value={dirigName} onChange={(e) => setDirigName(e.target.value)} />
+                <input className={'input'} type="text" placeholder={'Nr. Document.'} value={documentId} onChange={(e) => setDocumentId(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Etaje'} value={floorCount} onChange={(e) => setFloorCount(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Suprafata'} value={totalArea} onChange={(e) => setTotalArea(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Adresa objectului'} value={objectAddress} onChange={(e) => setObjectAddress(e.target.value)} />
@@ -111,7 +112,6 @@ const Form = () => {
                 <input className={'input'} type="text" placeholder={'Inaltimea cladirii'} value={cladInalt} onChange={(e) => setCladInalt(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Inaltimea tavantului'} value={tavanInalt} onChange={(e) => setTavanInalt(e.target.value)} />
                 <input className={'input'} type="text" placeholder={'Nr. Proiectului'} value={projectId} onChange={(e) => setProjectId(e.target.value)} />
-                <input className={'input'} type="text" placeholder={'Nr. Document.'} value={documentId} onChange={(e) => setDocumentId(e.target.value)} />
 
                 <div className={'checkbox-group'}>
                     <label>
