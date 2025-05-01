@@ -1,96 +1,234 @@
-/* Form.css */
+
+:root {
+  --primary-color: #0088cc;
+  --secondary-color: #a3e0f5;
+  --accent-color: #5ac8fa;
+  --error-color: #ff3b30;
+  --success-color: #34c759;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* Base styles */
+body {
+  font-family: 'Roboto', 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styles */
+.form-container {
+  padding: 16px;
+  background: var(--tg-theme-bg-color);
+  border-radius: 12px;
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
 
 /* Header styles */
-h3 {
-    color: var(--tg-theme-text-color);
-    margin-bottom: 20px;
-    font-family: 'Arial', sans-serif;
-    text-align: center;
+.form h3 {
+  color: var(--tg-theme-text-color);
+  margin-bottom: 24px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-bottom: 12px;
 }
 
-/* Container for the form */
-.form-container {
-    padding: 20px;
-    background: var(--tg-theme-bg-color);
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-    color: var(--tg-theme-text-color);
+.form h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--primary-color);
+  border-radius: 2px;
 }
 
-/* Individual input field styles */
+/* Form section styles */
+.form-section {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(0, 136, 204, 0.1);
+}
+
+.form-section-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--tg-theme-hint-color, #888);
+}
+
+/* Input field styles */
 .input {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Transparent border */
-    border-radius: 4px;
-    background-color: rgba(166, 253, 253, 0.53); /* Transparent background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-    box-sizing: border-box;
-
+  width: 100%;
+  padding: 12px 16px;
+  margin: 8px 0;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--border-radius);
+  background-color: var(--tg-theme-secondary-bg-color, rgba(166, 253, 253, 0.2));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  font-size: 15px;
+  color: var(--tg-theme-text-color);
+  box-sizing: border-box;
 }
 
-/* Placeholder styles for input fields */
+.input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 136, 204, 0.2);
+  outline: none;
+}
+
+/* Placeholder styles */
 .input::placeholder {
-    color: rgb(0, 0, 0); /* Placeholder text color for default (light) theme */
-    opacity: 1; /* Ensure full opacity for placeholder */
+  color: var(--tg-theme-hint-color, #888);
+  opacity: 0.7;
 }
 
-/* Placeholder styles for Telegram's night theme */
-@media (prefers-color-scheme: dark) {
-    /* Adjust placeholder color for dark theme */
-    .input::placeholder {
-        color: #1f1919; /* Placeholder text color for Telegram's night theme */
-    }
-
-    .input {
-        background-color: rgba(166, 253, 253, 0.53); /* Transparent background */
-    }
-    .checkbox::placeholder {
-        color: #1f1919; /* Placeholder text color for Telegram's night theme */
-    }
-}
-
-/* Adjust placeholder color for focused input */
 .input:focus::placeholder {
-    color: #ccc; /* Placeholder text color on focus (adjust as needed) */
+  opacity: 0.5;
+}
+
+/* Date field specific styles */
+.date-label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--tg-theme-text-color);
+  font-weight: 500;
+}
+
+.date-label input[type="date"] {
+  width: 100%;
+  padding: 12px 16px;
+  margin-top: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--border-radius);
+  background-color: var(--tg-theme-secondary-bg-color, rgba(166, 253, 253, 0.2));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  font-size: 15px;
+  color: var(--tg-theme-text-color);
+  -webkit-appearance: none;
+  box-sizing: border-box;
+}
+
+.date-label input[type="date"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 136, 204, 0.2);
+  outline: none;
 }
 
 /* Checkbox group styles */
 .checkbox-group {
-    display: flex;
-    flex-direction: column;
-    margin: 20px 0;
+  margin: 20px 0;
+  padding: 12px;
+  background-color: var(--tg-theme-secondary-bg-color, rgba(166, 253, 253, 0.1));
+  border-radius: var(--border-radius);
 }
 
-.checkbox {
-    background-color: rgba(166, 253, 253, 0.53); /* Transparent background */
+.checkbox-group-title {
+  font-weight: 500;
+  margin-bottom: 12px;
+  color: var(--tg-theme-text-color);
+  font-size: 15px;
 }
 
 .checkbox-group label {
-    margin-bottom: 10px;
-    font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  background-color: var(--tg-theme-bg-color);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.date-label input[type="date"] {
-    width: 100%;
+.checkbox-group label:hover {
+  background-color: rgba(0, 136, 204, 0.05);
+}
+
+.checkbox-group label:last-child {
+  margin-bottom: 0;
+}
+
+.checkbox {
+  margin-right: 12px;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .form-container {
     padding: 12px;
-    margin-top: 5px;
-    border: 1px solid rgb(255, 255, 255); /* Light border */
-    border-radius: 4px;
-    background-color: rgba(166, 253, 253, 0.53); /* Transparent background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-    box-sizing: border-box;
-    -webkit-appearance: none; /* Remove default iOS styling */
-    color: var(--telegram-text);
+  }
+  
+  .input, .date-label input[type="date"] {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .form h3 {
+    font-size: 20px;
+  }
 }
 
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .input, .date-label input[type="date"] {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .checkbox-group {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .checkbox-group label {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .checkbox-group label:hover {
+    background-color: rgba(0, 136, 204, 0.1);
+  }
+}
 
-.date-label input[type="date"]:focus {
-    border-color: #007bff; /* Focus border color */
-    outline: none;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Focus shadow */
+/* Animation effects */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.input:focus, .date-label input[type="date"]:focus {
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.2); }
+  100% { box-shadow: 0 0 0 4px rgba(0, 136, 204, 0.2); }
+}
+
+/* Required field indicator */
+.required::after {
+  content: '*';
+  color: var(--error-color);
+  margin-left: 4px;
 }
